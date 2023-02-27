@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Ramais</title>
+    <link rel="shortcut icon" href="Logo-em-branco.ico" type="image/x-icon">
+</head>
+
+<script>
+    function filtrarTabela() {
+        // Obtém o valor digitado no campo de pesquisa
+        var input = document.getElementById("pesquisa");
+        var filtro = input.value.toUpperCase();
+
+        // Obtém a tabela e as linhas da tabela
+        var tabela = document.getElementById("tabela");
+        var linhas = tabela.getElementsByTagName("tr");
+
+        // Itera sobre as linhas da tabela e mostra ou oculta a linha dependendo do valor de pesquisa
+        for (var i = 0; i < linhas.length; i++) {
+            var linha = linhas[i];
+            var colunas = linha.getElementsByTagName("td");
+            var deveMostrar = false;
+
+            for (var j = 0; j < colunas.length; j++) {
+                var coluna = colunas[j];
+
+                if (coluna.innerHTML.toUpperCase().indexOf(filtro) > -1) {
+                    deveMostrar = true;
+                    break;
+                }
+            }
+
+            if (deveMostrar) {
+                linha.style.display = "";
+            } else {
+                linha.style.display = "none";
+            }
+        }
+    }
+
+    window.addEventListener("load", function() {
+        document.getElementById("pesquisa").addEventListener("keydown", function(event) {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                filtrarTabela();
+            }
+        });
+    });
+</script>
+
+<body>
+    <header>
+        <div>
+            <nav>
+                <h1 class="textprincipal">
+                    Via Uno
+                </h1>
+                <h2 class="textsecundario">
+                    Lista de Ramais
+                </h2>
+                <input id="pesquisa" type="text" name="pesquisa" placeholder="Digite sua pesquisa aqui">
+                <button id="botao" type="button" onclick="filtrarTabela()">Buscar</button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <table id="tabela">
+            <thead>
+                <tr>
+                    <th>Setor</th>
+                    <th>Nome</th>
+                    <th>E-mail</th>
+                    <th>Ramal</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td>Administrativo de vendas</td>
+                    <td>Andrea Silveira</td>
+                    <td><a href="mailto:andrea.silveira@rrshoes.com.br">andrea.silveira@rrshoes.com.br</a></td>
+                    <td>2094</td>
+                </tr>
+                <tr>
+                    <td>Administrativo de vendas</td>
+                    <td>Eduardo Silva</td>
+                    <td><a href="mailto:eduardo.silva@rrshoes.com.br">eduardo.silva@rrshoes.com.br</a></td>
+                    <td>2314</td>
+                </tr>
+                <tr>
+                    <td>Administrativo de vendas</td>
+                    <td>Elcio Portal</td>
+                    <td><a href="mailto:elcio@rrshoes.com.br">elcio@rrshoes.com.br</a></td>
+                    <td>2289</td>
+                </tr>
+                <tr>
+                    <td>Administrativo de vendas</td>
+                    <td>Eliane Zardo</td>
+                    <td><a href="mailto:devolucao@viauno.com">devolucao@viauno.com</a></td>
+                    <td>2223</td>
+                </tr>
+                <tr>
+                    <td>Administrativo de vendas</td>
+                    <td>Felipe Medeiros</td>
+                    <td><a href="mailto:felipe@rrshoes.com.br">felipe@rrshoes.com.br</a></td>
+                    <td>2221</td>
+                </tr>
+                <tr>
+                    <td>Administrativo de vendas</td>
+                    <td>Lucas Bernardes</td>
+                    <td><a href="mailto:lucas.bernardes@viauno.com">lucas.bernardes@viauno.com</a></td>
+                    <td>2314</td>
+                </tr>
+                <tr>
+                    <td>Administrativo de vendas</td>
+                    <td>Muriel Spitznagel</td>
+                    <td><a href="mailto:muriel@rrshoes.com.br">muriel@rrshoes.com.br</a></td>
+                    <td>2283</td>
+                </tr>
+                <tr>
+                    <td>Administrativo de vendas</td>
+                    <td>Rafael Faustino</td>
+                    <td><a href="mailto:rafael.faustino@rrshoes.com.br">rafael.faustino@rrshoes.com.br</a></td>
+                    <td>2251</td>
+                </tr>
+                <tr>
+                    <td>Administrativo de vendas</td>
+                    <td>Talis Adam</td>
+                    <td><a href="mailto:talis@rrshoes.com.br">talis@rrshoes.com.br</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Administrativo de vendas</td>
+                    <td>Weliton Souza</td>
+                    <td><a href="mailto:weliton.souza@rrshoes.com.br">weliton.souza@rrshoes.com.br</a></td>
+                    <td>2228</td>
+                </tr>
+                <tr>
+                    <td>Almoxarifado</td>
+                    <td>Andressa Lima</td>
+                    <td><a href="mailto:andressa.lima@rrshoes.com.br">andressa.lima@rrshoes.com.br</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Almoxarifado</td>
+                    <td>Filipe Silveira</td>
+                    <td><a href="mailto:filipe.silveira@rrshoes.com.br">filipe.silveira@rrshoes.com.br</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Almoxarifado</td>
+                    <td>Gabriel Santos</td>
+                    <td><a href="mailto:gabriel.santos@rrshoes.com.br">gabriel.santos@rrshoes.com.br</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Almoxarifado</td>
+                    <td>Everton Flores</td>
+                    <td><a href="mailto:everton.flores@rrshoes.com.br">everton.flores@rrshoes.com.br</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Controladoria - Contabilidade</td>
+                    <td>Andreia Santos</td>
+                    <td><a href="mailto:andreia.santos@rrshoes.com.br">andreia.santos@rrshoes.com.br</a></td>
+                    <td>2234</td>
+                </tr>
+                <tr>
+                    <td>Controladoria - Contabilidade</td>
+                    <td>Grasiele Zalamena</td>
+                    <td><a href="mailto:grasiele.zalamena@rrshoes.com.br">grasiele.zalamena@rrshoes.com.br</a></td>
+                    <td>2234</td>
+                </tr>
+                <tr>
+                    <td>Controladoria - Custos</td>
+                    <td>Alessandra Santos</td>
+                    <td><a href="mailto:alessandra.santos@rrshoes.com.br">alessandra.santos@rrshoes.com.br</a></td>
+                    <td>2234</td>
+                </tr>
+                <tr>
+                    <td>Controladoria - Custos</td>
+                    <td>Andressa Gomes</td>
+                    <td><a href="mailto:andressa.gomes@rrshoes.com.br">andressa.gomes@rrshoes.com.br</a></td>
+                    <td>2264</td>
+                </tr>
+                <tr>
+                    <td>Controladoria - Custos</td>
+                    <td>Cassio Vidal</td>
+                    <td><a href="mailto:cassio.vidal@rrshoes.com.br">cassio.vidal@rrshoes.com.br</a></td>
+                    <td>2234</td>
+                </tr>
+                <tr>
+                    <td>Controladoria - Custos</td>
+                    <td>Karine Cavalheiro</td>
+                    <td><a href="mailto:karine.cavalheiro@rrshoes.com.br">karine.cavalheiro@rrshoes.com.br</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Controladoria - Fiscal</td>
+                    <td>Barbara Adam</td>
+                    <td><a href="mailto:barbara.adam@rrshoes.com.br">barbara.adam@rrshoes.com.br</a></td>
+                    <td>2311</td>
+                </tr>
+                <tr>
+                    <td>Controladoria - Fiscal</td>
+                    <td>Bruna Santos</td>
+                    <td><a href="mailto:bruna.santos@rrshoes.com.br">bruna.santos@rrshoes.com.br</a></td>
+                    <td>2259</td>
+                </tr>
+                <tr>
+                    <td>Controladoria - Fiscal</td>
+                    <td>Chaiani Muniz</td>
+                    <td><a href="mailto:chaiani.muniz@rrshoes.com.br">chaiani.muniz@rrshoes.com.br</a></td>
+                    <td>2311</td>
+                </tr>
+                <tr>
+                    <td>Controladoria - Fiscal</td>
+                    <td>Eliane Pellisoli</td>
+                    <td><a href="mailto:eliane.pellisoli@rrshoes.com.br">eliane.pellisoli@rrshoes.com.br</a></td>
+                    <td>2259</td>
+                </tr>
+                <tr>
+                    <td>Controladoria - Fiscal</td>
+                    <td>Gilsiane Silveira</td>
+                    <td><a href="mailto:gilsiane.silveira@rrshoes.com.br">gilsiane.silveira@rrshoes.com.br</a></td>
+                    <td>2259</td>
+                </tr>
+                <tr>
+                    <td>Controladoria - Fiscal</td>
+                    <td>Guilherme Vieira</td>
+                    <td><a href="mailto:guilherme.vieira@rrshoes.com.br">guilherme.vieira@rrshoes.com.br</a></td>
+                    <td>2301</td>
+                </tr>
+                <tr>
+                    <td>Controladoria - Fiscal</td>
+                    <td>Marcelli Pereira</td>
+                    <td><a href="mailto:marcelli.pereira@rrshoes.com.br">marcelli.pereira@rrshoes.com.br</a></td>
+                    <td>2311</td>
+                </tr>
+                <tr>
+                    <td>Controladoria - Fiscal</td>
+                    <td>Patricia Machado</td>
+                    <td><a href="mailto:patricia.machado@rrshoes.com.br">patricia.machado@rrshoes.com.br</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Controladoria - Fiscal</td>
+                    <td>Tammi Adam</td>
+                    <td><a href="mailto:tammi.adam@rrshoes.com.br">tammi.adam@rrshoes.com.br</a></td>
+                    <td>2239</td>
+                </tr>
+                <tr>
+                    <td>Controladoria - Fiscal</td>
+                    <td>Valmir Isidoro</td>
+                    <td><a href="mailto:valmir@rrshoes.com.br">valmir@rrshoes.com.br</a></td>
+                    <td>2239</td>
+                </tr>
+                <tr>
+                    <td>Controladoria - Fiscal</td>
+                    <td>Vitoria Candido</td>
+                    <td><a href="mailto:vitoria.candido@rrshoes.com.br">vitoria.candido@rrshoes.com.br</a></td>
+                    <td>2301</td>
+                </tr>
+                <tr>
+                    <td>Controller</td>
+                    <td>Daniela</td>
+                    <td><a href="mailto:daniela@rrshoes.com.br">daniela@rrshoes.com.br</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Desenvolvimento</td>
+                    <td>Anderson Haag</td>
+                    <td><a href="mailto:anderson.haag@viauno.com">anderson.haag@viauno.com</a></td>
+                    <td>2257</td>
+                </tr>
+                <tr>
+                    <td>Desenvolvimento </td>
+                    <td>Evelin Lima</td>
+                    <td><a href="mailto:evelin.lima@viauno.com">evelin.lima@viauno.com</a></td>
+                    <td>2257</td>
+                </tr>
+                <tr>
+                    <td>Desenvolvimento</td>
+                    <td>Kettlen Vanessa</td>
+                    <td><a href="mailto:kettlen.vanessa@viauno.com">kettlen.vanessa@viauno.com</a></td>
+                    <td>2257</td>
+                </tr>
+                <tr>
+                    <td>Desenvolvimento</td>
+                    <td>Suzana Câmara</td>
+                    <td><a href="mailto:suzana.camara@viauno.com">suzana.camara@viauno.com</a></td>
+                    <td>2257</td>
+                </tr>
+                <tr>
+                    <td>Diretoria</td>
+                    <td>Ramon Rabelo</td>
+                    <td><a href="mailto:ramon@rrshoes.com.br">ramon@rrshoes.com.br</a></td>
+                    <td>2226</td>
+                </tr>
+                <tr>
+                    <td>Distribuição</td>
+                    <td>Distribuição RR Shoes</td>
+                    <td><a href="mailto:distribuicao@rrshoes.com.br">distribuicao@rrshoes.com.br</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Engenharia de Processos</td>
+                    <td>Daniel Silveira</td>
+                    <td><a href="mailto:daniel.silveira@rrshoes.com.br">daniel.silveira@rrshoes.com.br</a></td>
+                    <td>2229</td>
+                </tr>
+                <tr>
+                    <td>Engenharia de Processos</td>
+                    <td>Dinael Santos</td>
+                    <td><a href="mailto:dinael.santos@rrshoes.com.br">dinael.santos@rrshoes.com.br</a></td>
+                    <td>2229</td>
+                </tr>
+                <tr>
+                    <td>Engenharia de Processos</td>
+                    <td>João Andrade</td>
+                    <td><a href="mailto:joao.andrade@rrshoes.com.br">joao.andrade@rrshoes.com.br</a></td>
+                    <td>2229</td>
+                </tr>
+                <tr>
+                    <td>Engenharia de Processos</td>
+                    <td>Luiz Marques</td>
+                    <td><a href="mailto:luiz.marques@rrshoes.com.br">luiz.marques@rrshoes.com.br</a></td>
+                    <td>2229</td>
+                </tr>
+                <tr>
+                    <td>Engenharia de Processos</td>
+                    <td>Nelson Luis</td>
+                    <td><a href="mailto:nelson.luis@rrshoes.com.br">nelson.luis@rrshoes.com.br</a></td>
+                    <td>2229</td>
+                </tr>
+                <tr>
+                    <td>Engenharia de Processos</td>
+                    <td>Vinicius Ramos</td>
+                    <td><a href="mailto:vinicius.ramos@rrshoes.com.br">vinicius.ramos@rrshoes.com.br</a></td>
+                    <td>2229</td>
+                </tr>
+                <tr>
+                    <td>Engenharia de Processos - PCP</td>
+                    <td>Alan Barcelos</td>
+                    <td><a href="mailto:alan.barcelos@rrshoes.com.br">alan.barcelos@rrshoes.com.br</a></td>
+                    <td>2264</td>
+                </tr>
+                <tr>
+                    <td>Engenharia de Processos - PCP</td>
+                    <td>Sandro Peixoto</td>
+                    <td><a href="mailto:sandro.peixoto@rrshoes.com.br">sandro.peixoto@rrshoes.com.br</a></td>
+                    <td>2264</td>
+                </tr>
+                <tr>
+                    <td>Engenharia de Processos - PCP</td>
+                    <td>Vitoria Cunha</td>
+                    <td><a href="mailto:vitoria.cunha@rrshoes.com.br">vitoria.cunha@rrshoes.com.br</a></td>
+                    <td>2264</td>
+                </tr>
+                <tr>
+                    <td>Financeiro</td>
+                    <td>Daniela</td>
+                    <td><a href="mailto:daniela@rrshoes.com.br">daniela@rrshoes.com.br</a></td>
+                    <td>2225</td>
+                </tr>
+                <tr>
+                    <td>Financeiro</td>
+                    <td>Lais Ferreira</td>
+                    <td><a href="mailto:segundavia@viauno.com">segundavia@viauno.com</a></td>
+                    <td>2300</td>
+                </tr>
+                <tr>
+                    <td>Financeiro</td>
+                    <td>Lauana Barbosa</td>
+                    <td><a href="mailto:lauana.barbosa@rrshoes.com.br">lauana.barbosa@rrshoes.com.br</a></td>
+                    <td>2227</td>
+                </tr>
+                <tr>
+                    <td>Financeiro</td>
+                    <td>Liziane Guimaraes</td>
+                    <td><a href="mailto:contasapagar2@rrshoes.com.br">contasapagar2@rrshoes.com.br</a></td>
+                    <td>2262</td>
+                </tr>
+                <tr>
+                    <td>Financeiro</td>
+                    <td>Patricia Borba</td>
+                    <td><a href="mailto:credito@viauno.com">credito@viauno.com</a></td>
+                    <td>2309</td>
+                </tr>
+                <tr>
+                    <td>Financeiro</td>
+                    <td>Viviane Souza</td>
+                    <td><a href="mailto:cobranca@viauno.com">cobranca@viauno.com</a></td>
+                    <td>2296</td>
+                </tr>
+                <tr>
+                    <td>Gerente de Produção</td>
+                    <td>Lairton Schmidt</td>
+                    <td><a href="mailto:lairton.jonas@rrshoes.com.br">lairton.jonas@rrshoes.com.br</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Gestao de Qualidade</td>
+                    <td>Leandro Fagundes</td>
+                    <td><a href="mailto:leandro.fagundes@rrshoes.com.br">leandro.fagundes@rrshoes.com.br</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Gestão de Qualidade</td>
+                    <td>Vitória Silveira</td>
+                    <td><a href="mailto:vitoria.silveira@rrshoes.com.br">vitoria.silveira@rrshoes.com.br</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Industrial</td>
+                    <td>Keli Silva</td>
+                    <td><a href="mailto:vitoria.silveira@rrshoes.com.br">vitoria.silveira@rrshoes.com.br</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Industrial</td>
+                    <td>Ramom Fraga</td>
+                    <td><a href="mailto:ramom.fraga@rrshoes.com.br">ramom.fraga@rrshoes.com.br</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Industrial</td>
+                    <td>Wagner Candido</td>
+                    <td><a href="mailto:wagner.candido@rrshoes.com.br">wagner.candido@rrshoes.com.br</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Juridico</td>
+                    <td>Fernanda Gomes</td>
+                    <td><a href="mailto:fernanda.gomes@rrshoes.com.br">fernanda.gomes@rrshoes.com.br</a></td>
+                    <td>2236</td>
+                </tr>
+                <tr>
+                    <td>Juridico</td>
+                    <td>Jordana Pereira</td>
+                    <td><a href="mailto:jordana.pereira@rrshoes.com.br">jordana.pereira@rrshoes.com.br</a></td>
+                    <td>2236</td>
+                </tr>
+                <tr>
+                    <td>Logistica - CD</td>
+                    <td>Fernando Neto</td>
+                    <td><a href="mailto:fernando.neto@rrshoes.com.br">fernando.neto@rrshoes.com.br</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Logistica Interna</td>
+                    <td>Eduarda Ribeiro</td>
+                    <td><a href="mailto:eduarda.ribeiro@rrshoes.com.br">eduarda.ribeiro@rrshoes.com.br</a></td>
+                    <td>2224</td>
+                </tr>
+                <tr>
+                    <td>Logistica Interna</td>
+                    <td>Jocimar Portal</td>
+                    <td><a href="mailto:jocimar@rrshoes.com.br">jocimar@rrshoes.com.br</a></td>
+                    <td>2224</td>
+                </tr>
+                <tr>
+                    <td>Manutenção</td>
+                    <td>Dionatam Andrade</td>
+                    <td><a href="mailto:dionatam.andrade@rrshoes.com.br">dionatam.andrade@rrshoes.com.br</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Marketing</td>
+                    <td>Amanda Bestetti</td>
+                    <td><a href="mailto:amanda.bestetti@viauno.com">amanda.bestetti@viauno.com</a></td>
+                    <td>2054</td>
+                </tr>
+                <tr>
+                    <td>Marketing</td>
+                    <td>Gabriel Dias</td>
+                    <td><a href="mailto:gabriel.dias@viauno.com">gabriel.dias@viauno.com</a></td>
+                    <td>2225</td>
+                </tr>
+                <tr>
+                    <td>Marketing</td>
+                    <td>Graziela Assunção</td>
+                    <td><a href="mailto:graziela.assuncao@viauno.com">graziela.assuncao@viauno.com</a></td>
+                    <td>2254</td>
+                </tr>
+                <tr>
+                    <td>Marketing</td>
+                    <td>Kazumi Orita</td>
+                    <td><a href="mailto:kazumi.orita@viauno.com">kazumi.orita@viauno.com</a></td>
+                    <td>2054</td>
+                </tr>
+                <tr>
+                    <td>Marketing</td>
+                    <td>Mileni Medeiros</td>
+                    <td><a href="mailto:mileni.medeiros@viauno.com">mileni.medeiros@viauno.com</a></td>
+                    <td>2054</td>
+                </tr>
+                <tr>
+                    <td>Marketing</td>
+                    <td>Rita Rodrigues</td>
+                    <td><a href="mailto:rita.rodrigues@viauno.com">rita.rodrigues@viauno.com</a></td>
+                    <td>2254</td>
+                </tr>
+                <tr>
+                    <td>Marketing</td>
+                    <td>SAC Viauno</td>
+                    <td><a href="mailto:sac@viauno.com">sac@viauno.com</a></td>
+                    <td>2007</td>
+                </tr>
+                <tr>
+                    <td>Marketing</td>
+                    <td>Tamara Ribeiro</td>
+                    <td><a href="mailto:tamara.ribeiro@viauno.com">tamara.ribeiro@viauno.com</a></td>
+                    <td>2254</td>
+                </tr>
+                <tr>
+                    <td>Marketing / Exportação</td>
+                    <td>Carolina Costa</td>
+                    <td><a href="mailto:carolina.costa@viauno.com">carolina.costa@viauno.com</a></td>
+                    <td>2304</td>
+                </tr>
+                <tr>
+                    <td>Modelagem</td>
+                    <td>Adelar Vargas</td>
+                    <td><a href="mailto:adelar.vargas@rrshoes.com.br">adelar.vargas@rrshoes.com.br</a></td>
+                    <td>2229</td>
+                </tr>
+                <tr>
+                    <td>Modelagem</td>
+                    <td>Eduardo Marçal</td>
+                    <td><a href="mailto:eduardo.marcal@rrshoes.com.br">eduardo.marcal@rrshoes.com.br</a></td>
+                    <td>2229</td>
+                </tr>
+                <tr>
+                    <td>Modelagem</td>
+                    <td>Layon Santos</td>
+                    <td><a href="mailto:layon.santos@rrshoes.com.br">layon.santos@rrshoes.com.br</a></td>
+                    <td>2229</td>
+                </tr>
+                <tr>
+                    <td>Modelagem</td>
+                    <td>Leandro Leal</td>
+                    <td><a href="mailto:leandro.leal@rrshoes.com.br">leandro.leal@rrshoes.com.br</a></td>
+                    <td>2229</td>
+                </tr>
+                <tr>
+                    <td>Modelagem</td>
+                    <td>Lucas Silva</td>
+                    <td><a href="mailto:lucas.silva@rrshoes.com.br">lucas.silva@rrshoes.com.br</a></td>
+                    <td>2229</td>
+                </tr>
+                <tr>
+                    <td>Modelagem</td>
+                    <td>Muriel Silva</td>
+                    <td><a href="mailto:muriel.silva@rrshoes.com.br">muriel.silva@rrshoes.com.br</a></td>
+                    <td>2229</td>
+                </tr>
+                <tr>
+                    <td>Modelagem</td>
+                    <td>Rafael Gomes</td>
+                    <td><a href="mailto:rafael.gomes@rrshoes.com.br">rafael.gomes@rrshoes.com.br</a></td>
+                    <td>2229</td>
+                </tr>
+                <tr>
+                    <td>Modelagem</td>
+                    <td>Robson Silva</td>
+                    <td><a href="mailto:robson.silva@rrshoes.com.br">robson.silva@rrshoes.com.br</a></td>
+                    <td>2229</td>
+                </tr>
+                <tr>
+                    <td>Modelagem</td>
+                    <td>Ubirajara Moura</td>
+                    <td><a href="mailto:ubirajara.moura@rrshoes.com.br">ubirajara.moura@rrshoes.com.br</a></td>
+                    <td>2229</td>
+                </tr>
+                <tr>
+                    <td>PCP - Etiquetas</td>
+                    <td>Eduardo Bitencourt</td>
+                    <td><a href="mailto:eduardo.bitencourt@rrshoes.com.br">eduardo.bitencourt@rrshoes.com.br</a></td>
+                    <td>2302</td>
+                </tr>
+                <tr>
+                    <td>PCP - Etiquetas</td>
+                    <td>Felipe Silva</td>
+                    <td><a href="mailto:filipe.silva@rrshoes.com.br">filipe.silva@rrshoes.com.br</a></td>
+                    <td>2302</td>
+                </tr>
+                <tr>
+                    <td>PCP - Etiquetas</td>
+                    <td>Keisi Ramos</td>
+                    <td><a href="mailto:keisi.ramos@rrshoes.com.br">keisi.ramos@rrshoes.com.br</a></td>
+                    <td>2302</td>
+                </tr>
+                <tr>
+                    <td>PCP - Etiquetas</td>
+                    <td>Suzani Rangel</td>
+                    <td><a href="mailto:suzani.rangel@rrshoes.com.br">suzani.rangel@rrshoes.com.br</a></td>
+                    <td>2302</td>
+                </tr>
+                <tr>
+                    <td>Recepção</td>
+                    <td>Katiane Meneghetti</td>
+                    <td><a href="mailto:katiane@rrshoes.com.br">katiane@rrshoes.com.br</a></td>
+                    <td>2220</td>
+                </tr>
+                <tr>
+                    <td>Recursos Humanos </td>
+                    <td>Ana Machado</td>
+                    <td><a href="mailto:ana.machado@rrshoes.com.br">ana.machado@rrshoes.com.br</a></td>
+                    <td>2258</td>
+                </tr>
+                <tr>
+                    <td>Recursos Humanos </td>
+                    <td>Andressa Nunes</td>
+                    <td><a href="mailto:andressa.nunes@rrshoes.com.br">andressa.nunes@rrshoes.com.br</a></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Recursos Humanos </td>
+                    <td>Bianca Adam</td>
+                    <td><a href="mailto:bianca.adam@rrshoes.com.br">bianca.adam@rrshoes.com.br</a></td>
+                    <td>2258</td>
+                </tr>
+                <tr>
+                    <td>Recursos Humanos </td>
+                    <td>Neito Peixoto</td>
+                    <td><a href="mailto:neito.peixoto@rrshoes.com.br">neito.peixoto@rrshoes.com.br</a></td>
+                    <td>2258</td>
+                </tr>
+                <tr>
+                    <td>Recursos Humanos </td>
+                    <td>Vanessa Fernandes</td>
+                    <td><a href="mailto:vanessa.fernandes@rrshoes.com.br">vanessa.fernandes@rrshoes.com.br</a></td>
+                    <td>2258</td>
+                </tr>
+                <tr>
+                    <td>Sala de Atendimento</td>
+                    <td>Atendimento </td>
+                    <td></td>
+                    <td>2280</td>
+                </tr>
+                <tr>
+                    <td>SESMT</td>
+                    <td>Anderson Silva</td>
+                    <td><a href="mailto:anderson.silva@rrshoes.com.br">anderson.silva@rrshoes.com.br</a></td>
+                    <td>2255</td>
+                </tr>
+                <tr>
+                    <td>SESMT</td>
+                    <td>Cecilia Silva</td>
+                    <td><a href="mailto:cecilia.silva@rrshoes.com.br">cecilia.silva@rrshoes.com.br</a></td>
+                    <td>2255</td>
+                </tr>
+                <tr>
+                    <td>SESMT</td>
+                    <td>Jeisibel Brito</td>
+                    <td><a href="mailto:jeisibel.brito@rrshoes.com.br">jeisibel.brito@rrshoes.com.br</a></td>
+                    <td>2255</td>
+                </tr>
+                <tr>
+                    <td>Suprimentos</td>
+                    <td>Bruno Cardoso</td>
+                    <td><a href="mailto:bruno.cardoso@rrshoes.com.br">bruno.cardoso@rrshoes.com.br</a></td>
+                    <td>2224</td>
+                </tr>
+                <tr>
+                    <td>Suprimentos</td>
+                    <td>Igor Santos</td>
+                    <td><a href="mailto:igor.santos@rrshoes.com.br">igor.santos@rrshoes.com.br</a></td>
+                    <td>2224</td>
+                </tr>
+                <tr>
+                    <td>Suprimentos</td>
+                    <td>Joelson Soares</td>
+                    <td><a href="mailto:joelson.soares@rrshoes.com.br">joelson.soares@rrshoes.com.br</a></td>
+                    <td>2024</td>
+                </tr>
+                <tr>
+                    <td>Suprimentos</td>
+                    <td>Juarez Pereira</td>
+                    <td><a href="mailto:juarez@rrshoes.com.br">juarez@rrshoes.com.br</a></td>
+                    <td>2224</td>
+                </tr>
+                <tr>
+                    <td>Suprimentos</td>
+                    <td>Leonardo Brito</td>
+                    <td><a href="mailto:leonardo.brito@rrshoes.com.br">leonardo.brito@rrshoes.com.br</a></td>
+                    <td>2024</td>
+                </tr>
+                <tr>
+                    <td>Suprimentos</td>
+                    <td>Paulo Cesar</td>
+                    <td><a href="mailto:compras4@rrshoes.com.br">compras4@rrshoes.com.br</a></td>
+                    <td>2224</td>
+                </tr>
+                <tr>
+                    <td>Suprimentos</td>
+                    <td>Rafael Cardeal</td>
+                    <td><a href="mailto:rafael.cardeal@rrshoes.com.br">rafael.cardeal@rrshoes.com.br</a></td>
+                    <td>2224</td>
+                </tr>
+                <tr>
+                    <td>Suprimentos</td>
+                    <td>Saimon Santos</td>
+                    <td><a href="mailto:saimon.santos@rrshoes.com.br">saimon.santos@rrshoes.com.br</a></td>
+                    <td>2224</td>
+                </tr>
+                <tr>
+                    <td>Tecnologia da Informação</td>
+                    <td>Ademir Zang</td>
+                    <td><a href="mailto:ademir.zang@rrshoes.com.br">ademir.zang@rrshoes.com.br</a></td>
+                    <td>2048</td>
+                </tr>
+                <tr>
+                    <td>Tecnologia da Informação</td>
+                    <td>Cassiano Soares</td>
+                    <td><a href="mailto:cassiano.soares@rrshoes.com.br">cassiano.soares@rrshoes.com.br</a></td>
+                    <td>2237</td>
+                </tr>
+                <tr>
+                    <td>Tecnologia da Informação</td>
+                    <td>Sidinei Ramos</td>
+                    <td><a href="mailto:sidinei.ramos@rrshoes.com.br">sidinei.ramos@rrshoes.com.br</a></td>
+                    <td>2237</td>
+                </tr>
+                <tr>
+                    <td>Vendas MI Região 1</td>
+                    <td>Sergio Bisotto</td>
+                    <td><a href="mailto:sergio.bisotto@rrshoes.com.br">sergio.bisotto@rrshoes.com.br</a></td>
+                    <td>2306</td>
+                </tr>
+                <tr>
+                    <td>Vendas MI Região 2</td>
+                    <td>Rafael Sessin</td>
+                    <td><a href="mailto:rafael@rrshoes.com.br">rafael@rrshoes.com.br</a></td>
+                    <td>2291</td>
+                </tr>
+                <tr>
+                    <td>Vendas MI Região 3</td>
+                    <td>Osvaldo Pedroso</td>
+                    <td><a href="mailto:osvaldo@rrshoes.com.br">osvaldo@rrshoes.com.br</a></td>
+                    <td>2005</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+
+    <footer>
+        <ul class="textfooter">
+            <li>Fone: 3662-5038</li>
+            <li>Puxar ligação: *60 + Ramal</li>
+            <li>Passar ligação: flash + Ramal</li>
+            <li>Verificar número ramal: *570</li>
+        </ul>
+        <span>
+            <span>Criado por <a id="linkfooter" href="https://github.com/CassianoMeneghetti" target="_blank">Cassiano Meneghetti</a> |
+                © Todos os direitos reservado 2023</span>
+        </span>
+    </footer>
+</body>
+</main>
+
+</html>
